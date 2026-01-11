@@ -119,7 +119,7 @@ static inline void freq_and_phase_snapshots_update(void)
             // АЧХ
             analog.freq_snapshots[chanel][freq_band] = sqrt_calc_and_norm_0_to_255(((uint32_t)((((int32_t)Re) * ((int32_t )Re)) + (((int32_t)Im) * ((int32_t)Im)))));
             // ФЧХ 
-            analog.phase_snapshots[chanel][freq_band] = atan_calc_and_norm_0_to_255(((Re != 0) ? (((int32_t)Im * 8UL) / (int32_t)Re) : (Im > 0) ? 0x7FFFFFFF : (Im < 0) ? 0x80000000 : 0UL));        
+            analog.phase_snapshots[chanel][freq_band] = atan_calc_and_norm_0_to_255(((Re != 0) ? (((int32_t)Im * 8L) / (int32_t)Re) : (Im > 0) ? 0x7FFFFFFF : (Im < 0) ? 0x80000000 : 0L));        
         }
     }
 }
